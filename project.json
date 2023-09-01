@@ -4,6 +4,7 @@
   "description": "Group 12 Invoice Processing Project",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.21.3]",
     "UiPath.Excel.Activities": "[2.22.0-preview]",
     "UiPath.IntelligentOCR.Activities": "[6.9.4]",
     "UiPath.Mail.Activities": "[1.20.3]",

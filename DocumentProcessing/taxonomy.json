@@ -14,9 +14,9 @@
       "Fields": [
         {
           "FieldId": "NoGroup.NoCategory.Invoices.VendorName",
-          "FieldName": "VendorName",
+          "FieldName": "InvoiceNumber",
           "IsMultiValue": false,
-          "Type": "Text",
+          "Type": "Number",
           "DeriveFieldsFormat": "",
           "Components": [],
           "SetValues": [],
