@@ -53,6 +53,27 @@
           ],
           "RuleSet": null,
           "DefaultValue": ""
+        },
+        {
+          "FieldId": "NoGroup.NoCategory.Invoices.DueDate",
+          "FieldName": "DueDate",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "Color",
+              "Value": "#fa6616"
+            },
+            {
+              "Key": "Hotkey",
+              "Value": "e"
+            }
+          ],
+          "RuleSet": null,
+          "DefaultValue": ""
         }
       ]
     }
