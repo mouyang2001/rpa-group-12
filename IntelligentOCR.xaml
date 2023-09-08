@@ -2,7 +2,6 @@
   <x:Members>
     <x:Property Name="in_DocumentPath" Type="InArgument(x:String)" />
     <x:Property Name="out_DataTable" Type="OutArgument(sd:DataTable)" />
-    <x:Property Name="argument1" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1068,2171</sap:VirtualizedContainerService.HintSize>
