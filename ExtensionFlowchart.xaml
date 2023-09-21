@@ -4,7 +4,7 @@
     <x:Property Name="out_ExtractedTable" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1068,1100</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1068,1170</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,7 +96,7 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap:VirtualizedContainerService.HintSize="716,1035" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap:VirtualizedContainerService.HintSize="939,1105" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="Extension" />
       <Variable x:TypeArguments="x:Int32" Name="PageCountPDF" />
@@ -107,8 +107,8 @@
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,229.5</av:PointCollection>
-        <x:Double x:Key="Width">682</x:Double>
-        <x:Double x:Key="Height">998</x:Double>
+        <x:Double x:Key="Width">905</x:Double>
+        <x:Double x:Key="Height">1068</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -145,9 +145,9 @@
             <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">480,404</av:Point>
+                  <av:Point x:Key="ShapeLocation">670,404</av:Point>
                   <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">580,456 580,486 624.5,486 624.5,928.5 540,928.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">770,456 770,928.5 540,928.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_3">
@@ -174,9 +174,11 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">265,386.5</av:Point>
               <av:Size x:Key="ShapeSize">70,87</av:Size>
-              <av:PointCollection x:Key="Default">335,430 480,430</av:PointCollection>
+              <av:PointCollection x:Key="Default">335,430 670,430</av:PointCollection>
               <av:PointCollection x:Key=".pdfConnector">265,430 170,430 170,515.5</av:PointCollection>
-              <av:PointCollection x:Key=".jpgConnector">300,473.5 300,503.5 570,503.5 570,840 540,840</av:PointCollection>
+              <av:PointCollection x:Key=".jpgConnector">300,473.5 300,503.5 580,503.5 580,804</av:PointCollection>
+              <av:PointCollection x:Key=".pngConnector">335,451.75 628.5,451.75 628.5,710 580,710 580,804</av:PointCollection>
+              <av:PointCollection x:Key=".jpegConnector">317.5,473.5 317.5,489 606.5,489 606.5,695 580,695 580,804</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowStep x:Key=".pdf" x:Name="__ReferenceID4">
@@ -214,7 +216,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <av:Point x:Key="ShapeLocation">130.5,646.5</av:Point>
                     <av:Size x:Key="ShapeSize">79,87</av:Size>
-                    <av:PointCollection x:Key="TrueConnector">130.5,690 100.5,690 100.5,840 340,840</av:PointCollection>
+                    <av:PointCollection x:Key="TrueConnector">130.5,690 100.5,690 100.5,830 480,830</av:PointCollection>
                     <av:PointCollection x:Key="FalseConnector">209.5,690 300,690</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -222,9 +224,9 @@
                   <FlowStep x:Name="__ReferenceID1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">340,814</av:Point>
+                        <av:Point x:Key="ShapeLocation">480,804</av:Point>
                         <av:Size x:Key="ShapeSize">200,52</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">440,866 440,916</av:PointCollection>
+                        <av:PointCollection x:Key="ConnectorLocation">580,856 580,886 440,886 440,916</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="IntelligentOCR.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="IntelligentOCR.xaml">
@@ -290,7 +292,9 @@
               </FlowDecision>
             </FlowStep.Next>
           </FlowStep>
+          <x:Reference>__ReferenceID1<x:Key>.png</x:Key></x:Reference>
           <x:Reference>__ReferenceID1<x:Key>.jpg</x:Key></x:Reference>
+          <x:Reference>__ReferenceID1<x:Key>.jpeg</x:Key></x:Reference>
         </FlowSwitch>
       </FlowStep.Next>
     </FlowStep>
