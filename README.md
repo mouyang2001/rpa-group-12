@@ -4,6 +4,8 @@ This project was built with UiPath.
 ## Run the project
 ### version of UiPath
    Here we use UiPath 2023.8 because it has latest packages and features.
+### clone the project
+git clone https://github.com/mouyang2001/rpa-group-12.git
 ### install dependencies
    Click "Manage packages" to install dependencies.
    
