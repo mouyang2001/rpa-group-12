@@ -46,7 +46,36 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "344f689f-19ec-4456-90f5-f55c084db963",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCases\\TestCase_OCR_Set2_Bunnings.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "ffb402c3-c762-4ea2-8be9-9e0b0a6d3799",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCases\\TestCase_OCR_Set2_Mitech.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6580b0e6-53a9-4baa-bf50-afe006b663ea",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCases\\TestCase_OCR_Set2_Rentokil.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "df09b7b6-d830-4f7c-abe8-423137001d9f",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCases\\TestCase_OCR_Set2_Couriers_Page_1.xaml"
+      }
+    ],
     "modernBehavior": false
   },
   "expressionLanguage": "CSharp",
