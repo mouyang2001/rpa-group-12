@@ -2,6 +2,8 @@
   <x:Members>
     <x:Property Name="in_File" Type="InArgument(x:String)" />
     <x:Property Name="out_ExtractedTable" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_FileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_FolderPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1068,1170</sap:VirtualizedContainerService.HintSize>
@@ -100,13 +102,15 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="Extension" />
       <Variable x:TypeArguments="x:Int32" Name="PageCountPDF" />
+      <Variable x:TypeArguments="x:String" Name="LogWrite" />
+      <Variable x:TypeArguments="x:String" Name="FailureLog" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,229.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,178.5</av:PointCollection>
         <x:Double x:Key="Width">905</x:Double>
         <x:Double x:Key="Height">1068</x:Double>
       </scg:Dictionary>
@@ -117,12 +121,12 @@
     <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">83,229.5</av:Point>
-          <av:Size x:Key="ShapeSize">434,82</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,311.5 300,386.5</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">83,178.5</av:Point>
+          <av:Size x:Key="ShapeSize">434,83</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,261.5 300,386.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
             <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Extension</CSharpReference>
@@ -142,26 +146,29 @@
       <FlowStep.Next>
         <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID2" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_3">
           <FlowSwitch.Default>
-            <FlowStep x:Name="__ReferenceID3">
+            <FlowStep x:Name="__ReferenceID6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">670,404</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">770,456 770,928.5 540,928.5</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">660,553.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,53</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">760,606.5 760,930 680,930</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_3">
-                <ui:MessageBox.Text>
-                  <InArgument x:TypeArguments="x:Object">
-                    <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">$"{in_File} is incompatible"</CSharpValue>
+              <ui:InvokeCode ContinueOnError="{x:Null}" Code="string Output = DateTime.Now.ToString(&quot;[MM/dd/yyyy HH:mm:ss.ffff] &quot;) + $&quot;{in_FileName} is invalid file&quot; + Environment.NewLine;&#xD;&#xA;File.AppendAllText($&quot;{in_FolderPath}\\failed.txt&quot;, Output);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="InvokeCode_6" Language="CSharp">
+                <ui:InvokeCode.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">in_FileName</CSharpValue>
                   </InArgument>
-                </ui:MessageBox.Text>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">
+                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_53">in_FolderPath</CSharpValue>
+                  </InArgument>
+                </ui:InvokeCode.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-              </ui:MessageBox>
+              </ui:InvokeCode>
               <FlowStep.Next>
                 <x:Reference>__ReferenceID0</x:Reference>
               </FlowStep.Next>
@@ -174,22 +181,22 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">265,386.5</av:Point>
               <av:Size x:Key="ShapeSize">70,87</av:Size>
-              <av:PointCollection x:Key="Default">335,430 670,430</av:PointCollection>
+              <av:PointCollection x:Key="Default">335,430 760,430 760,553.5</av:PointCollection>
               <av:PointCollection x:Key=".pdfConnector">265,430 170,430 170,515.5</av:PointCollection>
               <av:PointCollection x:Key=".jpgConnector">300,473.5 300,503.5 580,503.5 580,804</av:PointCollection>
               <av:PointCollection x:Key=".pngConnector">335,451.75 628.5,451.75 628.5,710 580,710 580,804</av:PointCollection>
               <av:PointCollection x:Key=".jpegConnector">317.5,473.5 317.5,489 606.5,489 606.5,695 580,695 580,804</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <FlowStep x:Key=".pdf" x:Name="__ReferenceID4">
+          <FlowStep x:Key=".pdf" x:Name="__ReferenceID3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">9,515.5</av:Point>
-                <av:Size x:Key="ShapeSize">322,68</av:Size>
+                <av:Size x:Key="ShapeSize">322,69</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">170,583.5 170,646.5</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <upap:GetPDFPageCount DisplayName="Get PDF Page Count" sap:VirtualizedContainerService.HintSize="322,68" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_2">
+            <upap:GetPDFPageCount DisplayName="Get PDF Page Count" sap:VirtualizedContainerService.HintSize="322,69" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_2">
               <upap:GetPDFPageCount.FileName>
                 <InArgument x:TypeArguments="x:String">
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">in_File</CSharpValue>
@@ -207,7 +214,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </upap:GetPDFPageCount>
             <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID5" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+              <FlowDecision x:Name="__ReferenceID4" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                 <FlowDecision.Condition>
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">PageCountPDF &lt;= 2</CSharpValue>
                 </FlowDecision.Condition>
@@ -217,7 +224,7 @@
                     <av:Point x:Key="ShapeLocation">130.5,646.5</av:Point>
                     <av:Size x:Key="ShapeSize">79,87</av:Size>
                     <av:PointCollection x:Key="TrueConnector">130.5,690 100.5,690 100.5,830 480,830</av:PointCollection>
-                    <av:PointCollection x:Key="FalseConnector">209.5,690 300,690</av:PointCollection>
+                    <av:PointCollection x:Key="FalseConnector">209.5,690 360,690 360,733.5</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <FlowDecision.True>
@@ -225,11 +232,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">480,804</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">580,856 580,886 440,886 440,916</av:PointCollection>
+                        <av:Size x:Key="ShapeSize">200,53</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">580,857 580,917.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="IntelligentOCR.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="IntelligentOCR.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="IntelligentOCR.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="IntelligentOCR.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_DocumentPath">
                           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">in_File</CSharpValue>
@@ -248,7 +255,7 @@
                       <FlowStep x:Name="__ReferenceID0">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">340,916</av:Point>
+                            <av:Point x:Key="ShapeLocation">480,917.5</av:Point>
                             <av:Size x:Key="ShapeSize">200,25</av:Size>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -264,26 +271,29 @@
                   </FlowStep>
                 </FlowDecision.True>
                 <FlowDecision.False>
-                  <FlowStep x:Name="__ReferenceID6">
+                  <FlowStep x:Name="__ReferenceID5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">300,664</av:Point>
-                        <av:Size x:Key="ShapeSize">200,52</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">400,716 400,746 310,746 310,928.5 340,928.5</av:PointCollection>
+                        <av:Point x:Key="ShapeLocation">260,733.5</av:Point>
+                        <av:Size x:Key="ShapeSize">200,53</av:Size>
+                        <av:PointCollection x:Key="ConnectorLocation">360,786.5 360,930 480,930</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:02" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="MessageBox_6">
-                      <ui:MessageBox.Text>
-                        <InArgument x:TypeArguments="x:Object">
-                          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">$"{in_File} exceeds 2 pages"</CSharpValue>
+                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="string Output = DateTime.Now.ToString(&quot;[MM/dd/yyyy HH:mm:ss.ffff] &quot;) + $&quot;{in_FileName} exceeds 2 pages&quot; + Environment.NewLine;&#xD;&#xA;File.AppendAllText($&quot;{in_FolderPath}\\failed.txt&quot;, Output);" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="200,53" sap2010:WorkflowViewState.IdRef="InvokeCode_5" Language="CSharp">
+                      <ui:InvokeCode.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FileName">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">in_FileName</CSharpValue>
                         </InArgument>
-                      </ui:MessageBox.Text>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_FolderPath">
+                          <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">in_FolderPath</CSharpValue>
+                        </InArgument>
+                      </ui:InvokeCode.Arguments>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                    </ui:MessageBox>
+                    </ui:InvokeCode>
                     <FlowStep.Next>
                       <x:Reference>__ReferenceID0</x:Reference>
                     </FlowStep.Next>
@@ -301,9 +311,9 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
-    <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
-    <x:Reference>__ReferenceID6</x:Reference>
     <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
   </Flowchart>
 </Activity>
