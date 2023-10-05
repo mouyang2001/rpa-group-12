@@ -5,7 +5,16 @@ This project was built with UiPath.
 ### version of UiPath
    Here we use UiPath 2023.8 because it has latest packages and features.
 ### clone the project
-git clone https://github.com/mouyang2001/rpa-group-12.git
+
+
+![clone1](https://github.com/mouyang2001/rpa-group-12/assets/61965934/39455bb1-4329-45af-b05b-2aa417465254)
+
+![clone2](https://github.com/mouyang2001/rpa-group-12/assets/61965934/78602d72-7d21-4392-a40b-cc827825cb15)
+
+![clone3](https://github.com/mouyang2001/rpa-group-12/assets/61965934/b655b106-7c25-47d1-8464-91eae47cb9d5)
+
+
+URL:  https://github.com/mouyang2001/rpa-group-12.git
 ### install dependencies
    Click "Manage packages" to install dependencies.
    
