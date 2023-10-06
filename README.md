@@ -6,19 +6,19 @@ This project was built with UiPath.
    Here we use UiPath 2023.8 because it has latest packages and features.
 ### clone the project
 
+![clone1](https://github.com/mouyang2001/rpa-group-12/assets/61965934/8913aeeb-b360-4a9c-a8af-a463dca913f2)
 
-![clone1](https://github.com/mouyang2001/rpa-group-12/assets/61965934/39455bb1-4329-45af-b05b-2aa417465254)
 
-![clone2](https://github.com/mouyang2001/rpa-group-12/assets/61965934/78602d72-7d21-4392-a40b-cc827825cb15)
+![clone2](https://github.com/mouyang2001/rpa-group-12/assets/61965934/66de3275-00fb-4368-a6b1-ac325444683e)
 
-![clone3](https://github.com/mouyang2001/rpa-group-12/assets/61965934/b655b106-7c25-47d1-8464-91eae47cb9d5)
-
+![clone3](https://github.com/mouyang2001/rpa-group-12/assets/61965934/f7a87b53-22ed-42f4-b605-469bdfba06a8)
 
 URL:  https://github.com/mouyang2001/rpa-group-12.git
 ### install dependencies
    Click "Manage packages" to install dependencies.
    
-   ![manage_packages_btn](https://github.com/mouyang2001/rpa-group-12/assets/61965934/ea3f3020-d6d9-44ea-adf5-cdf41a58d626)
+  ![manage_packages_btn](https://github.com/mouyang2001/rpa-group-12/assets/61965934/689e6f8f-e6d7-4fd8-9a9d-40e6c2662938)
+
 
 ### run the main
    In the project directory, you can debug the **Main** sequence, then it will show a dialog to **browse a folder** for invoices to be processed. After you select a folder, it begins to process invoices. Currently, invoices formats supported include .pdf, .jpg, and .png files.
