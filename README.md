@@ -4,6 +4,7 @@ SOFTENG 762 RPA Group 12 Invoice Processing Project
 This project was built with UiPath.
 
 This repository holds an UIPath application that scans invoices and stores important information into a separate document. The team recognises that technology can be used to better business processes, making them more efficient. This project targets the manual work that is required to read through invoices and input data into their own excel sheet, which can be labour intensive and error prone. This document outlines more information about the application, and how users can run it on their own machines.
+
 ---
 
 ## Prerequisites
