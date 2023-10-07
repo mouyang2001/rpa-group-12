@@ -5,11 +5,12 @@ This project was built with UiPath.
 
 This repository holds an UIPath application that scans invoices and stores important information into a separate document. The team recognises that technology can be used to better business processes, making them more efficient. This project targets the manual work that is required to read through invoices and input data into their own excel sheet, which can be labour intensive and error prone. This document outlines more information about the application, and how users can run it on their own machines.
 
-<<<<<<< HEAD
----
+## <<<<<<< HEAD
 
 =======
->>>>>>> f74dd179173a417429f0efcc38c53b708e86e34c
+
+> > > > > > > f74dd179173a417429f0efcc38c53b708e86e34c
+
 ## Prerequisites
 
 - UiPath 2023.8
@@ -54,11 +55,7 @@ Don't worry if it seems like nothing is happening - the application should be ru
 
 ## Result
 
-<<<<<<< HEAD
 The bot will generate a new **Excel sheet**, which includes information extracted such as invoice number, total amount, and due date. The Excel sheet can be found in the same folder as the invoices.
-=======
-The bot will generate a new **Excel sheet**, which includes information extracted such as invoice number, total amount, and due date, in the same folder as invoices.
->>>>>>> f74dd179173a417429f0efcc38c53b708e86e34c
 
 ### For invoices that cannot be read
 
