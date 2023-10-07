@@ -29,6 +29,7 @@ The application currently supports the following invoice formats:
 1. Open UiPath and follow these steps to clone the repository into your own machine.
 
 2. Select "Clone or Check Out"
+
    ![clone1](https://github.com/mouyang2001/rpa-group-12/assets/61965934/8913aeeb-b360-4a9c-a8af-a463dca913f2)
 
 3. Select "Clone Repository"
