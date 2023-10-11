@@ -24,7 +24,15 @@ The application currently supports the following invoice formats:
 
 ## Running the project
 
-### Clone the project
+### Via Local
+
+1. If you have a zip of project files, open the `project.json` file.
+
+![image](https://github.com/mouyang2001/rpa-group-12/assets/43261675/aae973fe-3482-4b4b-a804-f213065ff4fa)
+
+2. Then proceed to `Install dependencies` instructions section.
+
+### Via Remote
 
 1. Open UiPath and follow these steps to clone the repository into your own machine.
 
@@ -38,19 +46,21 @@ The application currently supports the following invoice formats:
 4. Copy the URL of this repository (`https://github.com/mouyang2001/rpa-group-12.git`) into the "Repository URL" field.
    ![clone3](https://github.com/mouyang2001/rpa-group-12/assets/61965934/f7a87b53-22ed-42f4-b605-469bdfba06a8)
 
+5. Then proceed to `Install dependencies` instructions section.
+
 ### Install dependencies
 
-You may need to install some dependencies to run the project. Click "Manage packages" to install them. The required dependencies you would need to install should be under the "Project Dependencies" tab.
+You may need to install some dependencies to run the project. Click "Manage packages" to install them. The required dependencies you need to install should be under the "Project Dependencies" tab.
 
 ![manage_packages_btn](https://github.com/mouyang2001/rpa-group-12/assets/61965934/689e6f8f-e6d7-4fd8-9a9d-40e6c2662938)
 
 ### Starting the project
 
-Once you have opened the project in UiPath, select "Debug" to run the main application. This will prompt you to find and select the folder that holds all the invoices from the **Setup** stage. Once you select the folder, the application will start to process the invoices.
+Once you have opened the project in UiPath, select "Debug" to run the main application. This will prompt you to find and select the folder that holds all the invoices from the **Setup** stage. Once you select the folder, the application will process the invoices.
 
-Don't worry if it seems like nothing is happening - the application should be running in the background!
+Logging will also be visible in the debug panel. 
 
-## Result
+## Results
 
 The bot will generate a new **Excel sheet**, which includes information extracted such as invoice number, total amount, and due date. The Excel sheet can be found in the same folder as the invoices.
 
@@ -59,9 +69,6 @@ The bot will generate a new **Excel sheet**, which includes information extracte
 Due to the limit of machine learning, invoices that have more than two pages cannot be read successfully.
 For the failed invoice, the bot will return a blank line and its filename will be recorded to a log file called **failed.txt** so that users can know which invoice isn't processed.
 
-## Learn More
-
-You can learn more about UiPath in the [UiPath documentation](https://docs.uipath.com/).
 
 ---
 
