@@ -5,8 +5,6 @@ This project was built with UiPath.
 
 This repository holds an UIPath application that scans invoices and stores important information into a separate document. The team recognises that technology can be used to better business processes, making them more efficient. This project targets the manual work that is required to read through invoices and input data into their own excel sheet, which can be labour intensive and error prone. This document outlines more information about the application, and how users can run it on their own machines.
 
----
-
 ## Prerequisites
 
 - UiPath 2023.8
@@ -24,7 +22,7 @@ The application currently supports the following invoice formats:
 
 ## Running the project
 
-### Via Local
+### Local project files
 
 1. If you have a zip of project files, open the `project.json` file.
 
@@ -32,7 +30,7 @@ The application currently supports the following invoice formats:
 
 2. Then proceed to `Install dependencies` instructions section.
 
-### Via Remote
+### Remote project files
 
 1. Open UiPath and follow these steps to clone the repository into your own machine.
 
